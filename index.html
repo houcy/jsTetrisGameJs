@@ -1,88 +1,70 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset='utf-8'>
+    <head>
+        <title>DaRaFF/jsTetrisGameJs @ GitHub</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8"> 
+        <meta name = "viewport" content = "user-scalable=no, width=device-width">
+        <script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+        <script src="lib/buzz/buzz.js"></script>
+        <script src="js/Tetris/Sound.js"></script>
+        <style type="text/css">
+            body {
+              margin-top: 1.0em;
+              background-color: #34a2bf;
+              font-family: Helvetica, Arial, FreeSans, san-serif;
+              color: #000000;
+            }
+            #container {
+              margin: 20px auto;
+              padding: 20px;
+            }
+            h1 { font-size: 3.8em; color: #cb5d40; margin-bottom: 3px; }
+            h1 .small { font-size: 0.4em; }
+            h1 a { text-decoration: none }
+            h2 { font-size: 1.5em; color: #cb5d40; }
+            h3 { text-align: center; color: #cb5d40; }
+            a { color: #cb5d40; }
+            .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
+            pre { background: #000; color: #fff; padding: 15px;}
+            hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+            .footer { text-align:center; padding-top:30px; font-style: italic; }
+        </style>
+    </head>
+    <body>
 
-  <title>DaRaFF/jsTetrisGameJs @ GitHub</title>
+        <!--        <div id="info">
+                    <canvas id="next_shape"></canvas>
+                    <p id="level">Level: <span></span></p>
+                    <p id="lines">Lines: <span></span></p>
+                    <p id="score">Score: <span></span></p>
+                    <p id="time">Time: <span></span></p>
+                </div>-->
+        <img id="gjs-loader" src="lib/gamejs/ajax-loader.gif">
+        <canvas id="gjs-canvas"></canvas>
+        <script src="lib/gamejs/yabble.js"></script>
+        <script src="lib/gamejs/gamejs-wrapped.js"></script>
 
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #34a2bf;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #000000;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #cb5d40; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #cb5d40; }
-    h3 { text-align: center; color: #cb5d40; }
-    a { color: #cb5d40; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
-</head>
+        <link rel='stylesheet' href='style.css' media='all' />
+        <script>
+            var buzzSound = new Sound();
+            buzzSound.init();
+            require.setModuleRoot('js/');
+            require.run('main');
+        </script>
+        <button id="musicOnButton" onclick="buzzSound.gameSound.play()">music on</button>
 
-<body>
-  <a href="https://github.com/DaRaFF/jsTetrisGameJs"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+        <a href="https://github.com/DaRaFF/jsTetrisGameJs"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
 
-  <div id="container">
-
-    <div class="download">
-      <a href="https://github.com/DaRaFF/jsTetrisGameJs/zipball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/zip.png"></a>
-      <a href="https://github.com/DaRaFF/jsTetrisGameJs/tarball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/tar.png"></a>
-    </div>
-
-    <h1><a href="https://github.com/DaRaFF/jsTetrisGameJs">jsTetrisGameJs</a>
-      <span class="small">by <a href="https://github.com/DaRaFF">DaRaFF</a></span></h1>
-
-    <div class="description">
-      Tetris clone with HTML5 canvas / javascript - i really like Tetris :-)
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-      <h2>Authors</h2>
-      <p>Ralph Meier (ralph_meier@swissonline.ch)<br/>      </p>
-    
-
-    
-      <h2>Contact</h2>
-      <p>Ralph Meier (ralph_meier@swissonline.ch)<br/>      </p>
-    
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="https://github.com/DaRaFF/jsTetrisGameJs/zipball/master">zip</a> or
-      <a href="https://github.com/DaRaFF/jsTetrisGameJs/tarball/master">tar formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/DaRaFF/jsTetrisGameJs</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="https://github.com/DaRaFF/jsTetrisGameJs">DaRaFF/jsTetrisGameJs</a>
-    </div>
-
-  </div>
-
-</body>
+        <div id="container">
+            <h2>Contact</h2>
+            <p>Ralph Meier (ralph_meier@swissonline.ch)<br/></p>
+            <h2>Download</h2>
+            <p>You can also clone the project with Git by running: </p>
+            <pre>$ git clone git://github.com/DaRaFF/jsTetrisGameJs</pre>
+            <div class="footer">
+                get the source code on GitHub : <a
+                    href="https://github.com/DaRaFF/jsTetrisGameJs">DaRaFF/jsTetrisGameJs</a>
+            </div>
+        </div>
+    </body>
 </html>
