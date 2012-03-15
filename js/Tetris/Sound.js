@@ -8,7 +8,7 @@ var Sound = function(){
     this.gameSound;
     
     this.init = function(){
-        this.gameSound = new buzz.sound( "/sound/tetris_sound_A", {        
+        this.gameSound = new buzz.sound( "/jsTetrisGameJs/sound/tetris_sound_A", {
             formats: [ "mp3", "ogg" ],
             preload: 'metadata',
             autoplay: false,
